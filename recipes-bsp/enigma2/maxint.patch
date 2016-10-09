@@ -1,0 +1,12 @@
+--- a/enigma2.openpli/lib/python/Screens/InfoBarGenerics.py     2016-08-19 17:27:41.467503948 +0200
++++ b/enigma2.openpli/lib/python/Screens/InfoBarGenerics.py     2016-08-19 22:50:41.698867834 +0200
+@@ -43,7 +43,8 @@
+ from time import time, localtime, strftime
+ import os
+ from bisect import insort
+-from sys import maxint
++#from sys import maxint
++maxint=65335
+ 
+ from RecordTimer import RecordTimerEntry, RecordTimer, findSafeRecordPath
+

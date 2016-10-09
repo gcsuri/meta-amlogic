@@ -1,0 +1,28 @@
+<keymap>
+	<translate>
+		<device name="HBGIC Technology Co., Ltd. USB Keyboard Mouse">
+			<key from="KEY_F1" to="KEY_PREVIOUS"/>
+			<key from="KEY_F2" to="KEY_NEXT"/>
+			<key from="KEY_F3" to="KEY_VIDEO"/>
+			<key from="KEY_F4" to="KEY_AUDIO"/>
+			<key from="KEY_F5" to="KEY_EPG"/>
+			<key from="KEY_F7" to="KEY_MENU"/>
+			<key from="KEY_F8" to="KEY_RED"/>
+			<key from="KEY_F9" to="KEY_GREEN"/>
+			<key from="KEY_F10" to="KEY_YELLOW"/>
+			<key from="KEY_INS_LINE" to="KEY_BLUE"/>
+			<key from="KEY_F11" to="KEY_TEXT"/>
+			<key from="KEY_ESC" to="KEY_EXIT"/>
+			<key from="KEY_EXIT" to="KEY_INFO"/>
+			<key from="KEY_PAGEUP" to="KEY_CHANNELUP"/>
+			<key from="KEY_PAGEDOWN" to="KEY_CHANNELDOWN"/>
+		</device>
+	</translate>
+	<translate>
+		<device name="aml_keypad">
+			<key from="KEY_PVR" to="KEY_VIDEO"/>
+			<key from="KEY_YELLOW" to="KEY_AUDIO"/>
+			<key from="KEY_ENTER" to="KEY_OK"/>
+		</device>
+	</translate>
+</keymap>
