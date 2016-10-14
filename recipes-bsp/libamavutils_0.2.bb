@@ -7,17 +7,17 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 #PR = "2fba80c"
 #PD = "2fba80c5b6ac9b58c644b62cfac5f6f97f58bc70"
 
-PR = "5e23a81"
-PD = "5e23a81b706f1748e5054d2cc60be92f84c0fb21"
+#PR = "5e23a81"
+#PD = "5e23a81b706f1748e5054d2cc60be92f84c0fb21"
 
 SRC_URI[md5sum] = "86cf810c10ed8bd99ec25a888b65a2af"
 SRC_URI[sha256sum] = "412cfafbd9725f5186b884b9599ff6561d2031b44d9873e79d377631a2b5f9b9"
 
 inherit lib_package
 
-SRC_URI = "https://github.com/surkovalex/libamcodec/archive/${PR}.tar.gz"
+SRC_URI = "file://libamcodec-210755d.tar.gz;md5=dd2153497a999a41cdc7f80f62e64543"
 
-S = "${WORKDIR}/libamcodec-${PD}/amavutils"
+S = "${WORKDIR}/libamcodec-210755d/amavutils"
 
 EXTRA_OEMAKE = "\
     'CC=${CC}' \

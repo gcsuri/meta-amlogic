@@ -6,12 +6,11 @@ LIC_FILES_CHKSUM = "file://${S}/COPYING;md5=d7810fab7487fb0aad327b76f1be7cd7"
 
 inherit kernel machine_kernel_pr
 
-MACHINE_KERNEL_PR_append = ".3"
-RELEASE = "201610041"
+# MACHINE_KERNEL_PR_append = ".3"
+RELEASE = "2016101205"
 PV = "3.14.${RELEASE}"
 
 DEPENDS = "xz-native bc-native u-boot-mkimage-native gcc"
-#RDEPENDS_${PN} += "libgcc"
 
 # Avoid issues with Amlogic kernel binary components
 INSANE_SKIP_${PN} += "already-stripped"
@@ -22,8 +21,8 @@ LINUX_VERSION_EXTENSION ?= "amlogic"
 
 COMPATIBLE_MACHINE = "(s905)"
 
-SRC_URI[md5sum] = "100d6601edd192a53d46b41e68ffe9ec"
-SRC_URI[sha256sum] = "1730479a157acf93c480cb409950c5fa8d5248672949a610a3100cf8aaf21716"
+SRC_URI[md5sum] = "5502614061b69d8e275edfa01e043d35"
+SRC_URI[sha256sum] = "00633be5bb4104010dfa0ba814e1739579f09298093fa08949473328614acafd"
 
 SRC_URI = "https://github.com/gcsuri/linux-amlogic/archive/${RELEASE}.tar.gz \
     file://defconfig \
@@ -35,10 +34,6 @@ SRC_URI = "https://github.com/gcsuri/linux-amlogic/archive/${RELEASE}.tar.gz \
 
 S = "${WORKDIR}/linux-amlogic-${RELEASE}"
 B = "${WORKDIR}/build"
-
-
-# Put debugging files into dbg package
-#FILES_kernel-dbg += "/usr/src/kernel/drivers/amlogic/input/touchscreen/gslx680/.debug"
 
 
 do_compile_append () {

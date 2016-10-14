@@ -11,6 +11,8 @@ PR = "r1"
 inherit autotools pkgconfig
 
 DEPENDS = "gstreamer libamcodec libamavutils"
+RDEPENDS_${PN} = "gstreamer libamcodec libamavutils"
+
 
 SRC_URI = "file://gst-aml-plugins-0.11.0.zip \
            file://osd_fix.patch \

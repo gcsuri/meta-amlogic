@@ -6,7 +6,7 @@
  from bisect import insort
 -from sys import maxint
 +#from sys import maxint
-+maxint=65335
++maxint=65535
  
  from RecordTimer import RecordTimerEntry, RecordTimer, findSafeRecordPath
 

@@ -89,33 +89,10 @@ echo add default decoder ppmgr deinterlace amvideo > /sys/class/vfm/map
 #echo 912000 >   /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
 echo conservative > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 echo 1488000 >  /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-ln -sf /sys/class/leds/wetek\:blue\:powerled/brightness /dev/led0
-ln -sf /sys/class/leds/wetek\:blue\:ethled/brightness /dev/led1
-ln -sf /sys/class/leds/wetek\:blue\:wifiled/brightness /dev/led2
 
-# only once
-if [ ! -e /etc/.sdpart ] && [ ! -e /dev/system ]; then
-	parted /dev/mmcblk0 unit MB mkpart primary ext4 1100MB 95%
-	sync ; sync ;
-	umount -f /dev/mmcblk0p3
-	/sbin/mkfs.ext4 -L mSD_Extra /dev/mmcblk0p3
-	umount -f /dev/mmcblk0p3
-	sync ; sync ;
-	tune2fs -c 5 -o journal_data_writeback /dev/mmcblk0p3
-	tune2fs -o ^acl /dev/mmcblk0p3
-	tune2fs -o ^user_xattr /dev/mmcblk0p3
-	tune2fs -E  mount_opts=noatime  /dev/mmcblk0p3
-#	tune2fs -E mount_opts=auto_da_alloc  /dev/mmcblk0p3
-#	tune2fs -O ^has_journal  /dev/mmcblk0p3
-	/usr/sbin/partprobe 
-	sync ; sync ;
-	mkdir /media/mSD_Extra
-	mount -t ext4 -O noatime,nodiratime /dev/mmcblk0p3 /media/mSD_Extra
-	cd /media/mSD_Extra
-	mkdir -m 777 movie
-	mkdir -m 777 timeshift
-	touch /etc/.sdpart
-fi
+# ln -sf /sys/class/leds/wetek\:blue\:powerled/brightness /dev/led0
+# ln -sf /sys/class/leds/wetek\:blue\:ethled/brightness /dev/led1
+# ln -sf /sys/class/leds/wetek\:blue\:wifiled/brightness /dev/led2
 
 if [ ! -e /etc/.aml ]; then
 	touch /etc/.aml

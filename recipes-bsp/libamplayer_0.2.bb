@@ -4,8 +4,8 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
-PR = "5e23a81"
-PD = "5e23a81b706f1748e5054d2cc60be92f84c0fb21"
+# PR = "5e23a81"
+# PD = "5e23a81b706f1748e5054d2cc60be92f84c0fb21"
 
 #PR = "2fba80c"
 #PD = "2fba80c5b6ac9b58c644b62cfac5f6f97f58bc70"
@@ -18,12 +18,12 @@ RDEPENDS_${PN} = "libamadec libamcodec"
 
 inherit lib_package
 
-SRC_URI = "https://github.com/surkovalex/libamcodec/archive/${PR}.tar.gz \
+SRC_URI = "file://libamcodec-210755d.tar.gz;md5=dd2153497a999a41cdc7f80f62e64543 \
            file://00-amplayer-makefile-fixes.patch \
            file://libamplayer.pc \
 "
 
-S = "${WORKDIR}/libamcodec-${PD}/amplayer"
+S = "${WORKDIR}/libamcodec-210755d/amplayer"
 
 EXTRA_OEMAKE = "\
     'CC=${CC}' \

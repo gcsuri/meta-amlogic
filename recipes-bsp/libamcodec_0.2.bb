@@ -14,18 +14,17 @@ PV = "0.2"
 #SRC_URI[md5sum] = "86cf810c10ed8bd99ec25a888b65a2af"
 #SRC_URI[sha256sum] = "412cfafbd9725f5186b884b9599ff6561d2031b44d9873e79d377631a2b5f9b9"
 
-DEPENDS = "libamadec"
-RDEPENDS_${PN} = "libamadec"
+DEPENDS = "libamadec libamavutils"
+RDEPENDS_${PN} = "libamadec libamavutils"
 
 inherit lib_package
 
-SRC_URI = "https://github.com/surkovalex/libamcodec/archive/${PR}.tar.gz \
+SRC_URI = "file://libamcodec-210755d.tar.gz;md5=dd2153497a999a41cdc7f80f62e64543 \
            file://libamcodec.pc \
-	   file://00-makefile-fix.patch \
            file://alsactl.conf \
 "
 
-S = "${WORKDIR}/libamcodec-${PD}/amcodec"
+S = "${WORKDIR}/libamcodec-210755d/amcodec"
 
 EXTRA_OEMAKE = " \
     'CC=${CC}' \
