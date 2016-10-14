@@ -53,7 +53,7 @@ do_install() {
     install -m 0644 ${WORKDIR}/zgemmastar.conf ${D}${sysconfdir}/amremote/
     install -m 0644 ${WORKDIR}/mxq4k.conf ${D}${sysconfdir}/amremote/
     cd ${D}${sysconfdir}/amremote/
-    ln -sf mxq4k.conf remote.conf
+    ln -sf wetek.conf remote.conf
 }
 
 
